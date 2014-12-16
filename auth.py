@@ -42,7 +42,7 @@ class Auth():
         else:
             self.url = "https://chrometophone.appspot.com"
 
-        self.authfile = "auth.json"
+	self.authfile = os.path.dirname(os.path.abspath(__file__)) + "/auth.json"
 
         if reauth or (not os.path.exists(self.authfile)):
             req_url = self.get_request_url()
